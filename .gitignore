@@ -1,0 +1,37 @@
+
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.sublime-*
+.settings/
+.project
+.classpath
+.springBeans
+
+target/
+build/
+out/
+bin/
+.gradle/
+*.class
+*.jar
+*.war
+
+# File Log Aplikasi
+*.log
+logs/
+
+# Keamanan & Konfigurasi Lokal (
+.env
+.env.*
+application-local.yml
+application-local.yaml
+*-local.properties
+
+# Temporary files & Cache
+*.tmp
+*.bak
+*.swp
+*~.nib
