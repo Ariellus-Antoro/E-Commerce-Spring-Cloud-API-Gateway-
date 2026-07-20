@@ -1,0 +1,59 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: api-gateway
+    cloud:
+        gateway:
+            routes:
+                #SQL
+                - id: auth-service-route
+                  uri: lb://auth-service
+                  predicates:
+                      - Path=/api/auth/**
+
+                - id: employee-service-route
+                  uri: lb://employee-service
+                  predicates:
+                      - Path=/api/employees/**
+
+                - id: order-service-route
+                  uri: lb://order-service
+                  predicates:
+                      - Path=/api/orders/**
+
+                - id: payment-service-route
+                  uri: lb://payment-service
+                  predicates:
+                      - Path=/api/payments/**
+
+                #Mongo
+                - id: product-service-route
+                  uri: lb://product-service
+                  predicates:
+                      - Path=/api/products/**
+
+                - id: inventory-service-route
+                  uri: lb://inventory-service
+                  predicates:
+                      - Path=/api/inventories/**
+
+                - id: review-service-route
+                  uri: lb://review-service
+                  predicates:
+                      - Path=/api/reviews/**
+
+                - id: shipping-service-route
+                  uri: lb://shipping-service
+                  predicates:
+                      - Path=/api/shipments/**
+
+
+#Eureka
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+    instance:
+        prefer-ip-address: true
