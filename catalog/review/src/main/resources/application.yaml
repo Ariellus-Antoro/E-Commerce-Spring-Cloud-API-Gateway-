@@ -1,0 +1,13 @@
+server:
+  port: 8103
+
+spring:
+  application:
+    name: review-service  
+  mongodb:
+    uri: mongodb+srv://aryamisiu_db_user:4Clz3sPUCNlvfGSE@cluster0.kbfix5n.mongodb.net/db_ecommerce_catalog?retryWrites=true&w=majority
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
