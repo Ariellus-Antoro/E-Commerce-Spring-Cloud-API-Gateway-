@@ -1,0 +1,17 @@
+server:
+  port: 8101
+
+spring:
+  application:
+    name: product
+
+  mongodb:
+    uri: mongodb+srv://razels:carlitos@clusterws.sz6og6i.mongodb.net/
+    database: db_ecommerce_catalog
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    prefer-ip-address: true
