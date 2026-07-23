@@ -2,6 +2,8 @@ server:
     port: 8082
 
 spring:
+    config:
+        import: optional:file:.env[.properties]
     application:
         name: api-gateway
     cloud:
@@ -30,6 +32,8 @@ spring:
 
                 #Mongo
                 - id: product-service-route
+                # Test apigateway
+                #   uri: https://jsonplaceholder.typicode.com
                   uri: lb://product-service
                   predicates:
                       - Path=/api/products/**
@@ -57,3 +61,14 @@ eureka:
             defaultZone: http://localhost:8761/eureka/
     instance:
         prefer-ip-address: true
+
+jwt:
+    secret: ${JWT_SECRET:default-secret-key-minimum-32-characters-long}
+
+springdoc:
+    swagger-ui:
+        urls:
+            - name: Auth Service
+              url: /api/auth/v3/api-docs
+            - name: Product Service
+              url: /api/products/v3/api-docs
