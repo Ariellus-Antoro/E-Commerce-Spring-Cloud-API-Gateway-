@@ -19,7 +19,7 @@ The system consists of an API Gateway, Service Discovery, and two main business 
 ### 2. Catalog (MongoDB)
 * `product-service`: 
 * `inventory-service`: 
-* `cart-service`: 
+* `review-service`: 
 * `shipping-service`:
 
 ### Prerequisites
