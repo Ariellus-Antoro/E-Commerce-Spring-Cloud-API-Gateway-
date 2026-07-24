@@ -23,8 +23,8 @@ public class CreateOrderRequest {
     }
 
     public void setItems(List<OrderItemRequest> items) {
-        items = items;
-    }
+    this.items = items;
+}
 
     
 }

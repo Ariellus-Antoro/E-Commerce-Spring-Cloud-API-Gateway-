@@ -49,6 +49,11 @@ public class OrderService {
 
     public OrderResponse createOrder(CreateOrderRequest request) {
 
+        System.out.println("===== CREATE ORDER =====");
+    System.out.println("UserId = " + request.getUserId());
+    System.out.println("Items = " + request.getItems());
+
+
         Order order = new Order();
         order.setUserId(request.getUserId());
         order.setCreatedAt(LocalDateTime.now());

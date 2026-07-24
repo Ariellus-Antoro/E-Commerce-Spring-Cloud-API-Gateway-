@@ -33,7 +33,9 @@ public class OrderController {
     @PostMapping
     public ResponseEntity<OrderResponse> createOrder(
             @RequestBody CreateOrderRequest request) {
-
+                   System.out.println("===== CONTROLLER =====");
+    System.out.println("UserId = " + request.getUserId());
+    System.out.println("Items = " + request.getItems());
         return ResponseEntity.ok(orderService.createOrder(request));
     }
 
