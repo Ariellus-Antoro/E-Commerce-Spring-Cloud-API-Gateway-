@@ -10,7 +10,9 @@ import com.ecommerce.review.model.Review;
 import com.ecommerce.review.repository.ReviewRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReviewService {
@@ -26,7 +28,37 @@ public class ReviewService {
     }
 
     public Review createReview(Review review) {
+        review.setCreatedAt(LocalDateTime.now());
         return reviewRepository.save(review);
+    }
+
+        // Get All Reviews
+    public List<Review> getAllReviews() {
+        return reviewRepository.findAll();
+    }
+
+    // Get Review By ID Mongo
+    public Optional<Review> getReviewById(String id) {
+        return reviewRepository.findById(id);
+    }
+
+    // Update Review (PUT)
+    public Review updateReview(String id, Review details) {
+        Review review = reviewRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Review not found with id: " + id));
+
+        review.setRating(details.getRating());
+        review.setComment(details.getComment());
+
+        return reviewRepository.save(review);
+    }
+
+    // Delete Review
+    public void deleteReview(String id) {
+        Review review = reviewRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Review not found with id: " + id));
+
+        reviewRepository.delete(review);
     }
 
     public List<Review> getReviewsByProduct(String productId) {
