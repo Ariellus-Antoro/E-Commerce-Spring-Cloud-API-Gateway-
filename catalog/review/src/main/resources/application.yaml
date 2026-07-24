@@ -5,7 +5,7 @@ spring:
   application:
     name: review-service  
   mongodb:
-    uri: mongodb+srv://aryamisiu_db_user:4Clz3sPUCNlvfGSE@cluster0.kbfix5n.mongodb.net/db_ecommerce_catalog?retryWrites=true&w=majority
+    uri: #fill
 
 eureka:
   client:
