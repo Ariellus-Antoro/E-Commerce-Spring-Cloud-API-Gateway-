@@ -5,9 +5,16 @@ spring:
   application:
     name: review-service  
   mongodb:
-    uri: #fill
+    uri: mongodb+srv://aryamisiu_db_user:Spenda20@cluster0.kbfix5n.mongodb.net/db_ecommerce_catalog?retryWrites=true&w=majority
 
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
