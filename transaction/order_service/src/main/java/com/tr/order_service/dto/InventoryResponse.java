@@ -1,9 +1,14 @@
 package com.tr.order_service.dto;
 
+import java.time.Instant;
+
 public class InventoryResponse {
+
     private String id;
     private String productId;
     private Integer availableStock;
+    private Integer reservedStock;
+    private Instant lastUpdated;
 
     public InventoryResponse() {
     }
@@ -31,5 +36,20 @@ public class InventoryResponse {
     public void setAvailableStock(Integer availableStock) {
         this.availableStock = availableStock;
     }
-    
+
+    public Integer getReservedStock() {
+        return reservedStock;
+    }
+
+    public void setReservedStock(Integer reservedStock) {
+        this.reservedStock = reservedStock;
+    }
+
+    public Instant getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(Instant lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
 }
