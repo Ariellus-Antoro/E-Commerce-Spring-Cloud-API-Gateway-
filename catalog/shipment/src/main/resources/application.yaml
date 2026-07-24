@@ -1,0 +1,13 @@
+server:
+  port: 8104
+
+spring:
+  application:
+    name: shipment-service
+  mongodb:
+    uri: #fill
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
