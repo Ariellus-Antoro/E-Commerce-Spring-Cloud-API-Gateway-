@@ -12,7 +12,7 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
-      springdoc:
+springdoc:
   api-docs:
     path: /v3/api-docs
   swagger-ui:
